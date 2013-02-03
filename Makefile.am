@@ -3,7 +3,7 @@
 
 bin_PROGRAMS = simulator
 
-simulator_CPPFLAGS = -IObjectville \
+simulator_CPPFLAGS = -g -IObjectville \
 										 -ISimulator
 
 simulator_SOURCES = Simulator/Simulator.cpp

@@ -2,11 +2,11 @@
 
 if [ -e "./build" ]; then
     echo "removing ./build ..."
-    cd ./build
-    make uninstall
-    make clean
-    rm -f */Makefile */TAGS config.* libtool stamp-h1 
-    cd ..
+#    cd ./build
+#    make uninstall
+#    make clean
+#    rm -f */Makefile */TAGS config.* libtool stamp-h1 
+#    cd ..
     rm -rf ./build
     if [ -e "./target" ]; then
         echo "removing ./target..."
