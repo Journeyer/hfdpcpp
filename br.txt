@@ -1,0 +1,55 @@
+break ../Simulator/../Objectville/Flight.hpp:Hfdp::Flight::~Flight()
+break ../Simulator/../Objectville/Flight.hpp:Hfdp::Flight::~Flight()
+break ../Simulator/../Objectville/Fowl.hpp:Hfdp::Fowl::swim_impl() const
+break ../Simulator/../Objectville/Fowl.hpp:Hfdp::Fowl::to_string_impl() const
+break ../Simulator/../Objectville/Fowl.hpp:Hfdp::Fowl::~Fowl()
+break ../Simulator/../Objectville/Fowl.hpp:Hfdp::Fowl::~Fowl()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Gobble_speech::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Gobble_speech::~Gobble_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Gobble_speech::~Gobble_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_flight::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_flight::~Negated_flight()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_flight::~Negated_flight()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_speech::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_speech::~Negated_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_speech::~Negated_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Quack_speech::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Quack_speech::~Quack_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Quack_speech::~Quack_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Squeak_speech::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Squeak_speech::~Squeak_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Squeak_speech::~Squeak_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Winged_flight::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Winged_flight::~Winged_flight()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Winged_flight::~Winged_flight()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::make(Hfdp::identity<Hfdp::Fowl_factory::Decoy_duck>) const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::make(Hfdp::identity<Hfdp::Fowl_factory::Mallard_duck>) const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::make(Hfdp::identity<Hfdp::Fowl_factory::Rubber_duck>) const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::make(Hfdp::identity<Hfdp::Fowl_factory::Wild_turkey>) const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::~Fowl_factory()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::~Fowl_factory()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Winged_flight::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Winged_flight::~Winged_flight()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Winged_flight::~Winged_flight()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_flight::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_flight::~Negated_flight()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_flight::~Negated_flight()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Gobble_speech::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Gobble_speech::~Gobble_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Gobble_speech::~Gobble_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Quack_speech::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Quack_speech::~Quack_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Quack_speech::~Quack_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Squeak_speech::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Squeak_speech::~Squeak_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Squeak_speech::~Squeak_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_speech::execute() const
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_speech::~Negated_speech()
+break ../Simulator/../Objectville/Fowl_factory.hpp:Hfdp::Fowl_factory::Negated_speech::~Negated_speech()
+break ../Simulator/../Objectville/Object.hpp:Hfdp::Object::get_hash_code_impl() const
+break ../Simulator/../Objectville/Object.hpp:Hfdp::Object::to_string_impl() const
+break ../Simulator/../Objectville/Object.hpp:Hfdp::Object::~Object()
+break ../Simulator/../Objectville/Object.hpp:Hfdp::Object::~Object()
+break ../Simulator/../Objectville/Speech.hpp:Hfdp::Speech::~Speech()
+break ../Simulator/../Objectville/Speech.hpp:Hfdp::Speech::~Speech()
+break animate
