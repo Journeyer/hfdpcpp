@@ -1,6 +1,8 @@
 #ifndef	_hfdp_cpp_objectville_fowl_hpp_
 #define _hfdp_cpp_objectville_fowl_hpp_
 
+#include "Hum_Log_Manager.h"
+#include "Hum_Trace.h"
 #include "../Objectville/Hfdp.h"
 #include "../Objectville/Object.hpp"
 #include "../Objectville/Flight.hpp"
@@ -57,6 +59,7 @@ namespace Hfdp
              flight(flight.release()),			// inject and take ownership (sink)
              speech(speech.release())			// inject and take ownership (sink)
     {		
+      HUM_TRACE(ACE_TEXT("Fowl::Fowl"));
     }
 
   private: Fowl(const Fowl&);				// Disable copy constructor
@@ -68,6 +71,7 @@ namespace Hfdp
   private: virtual std::string
            to_string_impl() const
            {
+             HUM_TRACE(ACE_TEXT("Fowl::to_string_impl"));
              return type_name;
            }
   private: std::string type_name;
@@ -77,6 +81,7 @@ namespace Hfdp
   public: float 
           get_weight() 
           { 
+            HUM_TRACE(ACE_TEXT("Fowl::get_weight"));
             return weight; 
           }
   private: float weight;
@@ -86,6 +91,7 @@ namespace Hfdp
   public: std::string 
           fly() const
           {
+            HUM_TRACE(ACE_TEXT("Fowl::fly"));
             return flight->execute();
           }
   private: std::auto_ptr<Flight> flight;	// holds pointer to behavior actuator
@@ -95,6 +101,7 @@ namespace Hfdp
   public: std::string
           speak() const 
           {
+            HUM_TRACE(ACE_TEXT("Fowl::speak"));
             return speech->execute();
           }
   private: std::auto_ptr<Speech> speech;	// holds pointer to behavior actuator
@@ -104,6 +111,7 @@ namespace Hfdp
   public: std::string 
           swim() const 
           {
+            HUM_TRACE(ACE_TEXT("Fowl::swim"));
             return swim_impl();
           }
           /*
@@ -114,6 +122,7 @@ namespace Hfdp
   private: virtual std::string		
            swim_impl() const
            {
+             HUM_TRACE(ACE_TEXT("Fowl::swim_impl"));
              return "Any fowl can swim, even turkeys, but fake ones just float!";
            };
   };

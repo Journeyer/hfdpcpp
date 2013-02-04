@@ -1,6 +1,8 @@
 #ifndef	_hfdp_cpp_objectville_fowl_factory_hpp_
 #define _hfdp_cpp_objectville_fowl_factory_hpp_
 
+#include "Hum_Log_Manager.h"
+#include "Hum_Trace.h"
 #include <cstdlib>
 #include <ctime>
 #include <map>
@@ -23,6 +25,7 @@ namespace Hfdp
    */
   float weight(float minimum, float maximum) 
   { 
+    HUM_TRACE(ACE_TEXT("weight"));
     float value = ((float) std::rand()) / (float) RAND_MAX; 
     float range = std::max(minimum, maximum) - std::min(minimum, maximum);
 
@@ -53,6 +56,7 @@ namespace Hfdp
      */
   protected: Fowl_factory()
              {
+               HUM_TRACE(ACE_TEXT("Fowl_factory::Fowl_factory"));
                srand((unsigned)time(0));					// seeds random 'weight' method
              }
 
@@ -66,6 +70,7 @@ namespace Hfdp
            public: virtual std::string
                    execute() const
                    {
+                     HUM_TRACE(ACE_TEXT("Fowl_factory::Winged_flight::execute"));
                      return "I'm flying with wings!!";		// TODO: make this a resource
                    }
            };
@@ -77,6 +82,7 @@ namespace Hfdp
            public: virtual std::string
                    execute() const
                    {
+                     HUM_TRACE(ACE_TEXT("Fowl_factory::Negated_flight::execute"));
                      return "I can't fly!";					// TODO: make this a resource
                    }
            };
@@ -88,6 +94,7 @@ namespace Hfdp
            public: virtual std::string
                    execute() const
                    {
+                     HUM_TRACE(ACE_TEXT("Fowl_factory::Gobble_speech::execute"));
                      return "Gobble, Gobble";				// TODO: make this a resource
                    }
            };
@@ -99,6 +106,7 @@ namespace Hfdp
            public: virtual std::string
                    execute() const
                    {
+                     HUM_TRACE(ACE_TEXT("Fowl_factory::Quack_speech::execute"));
                      return "Quack!";						// TODO: make this a resource
                    }
            };
@@ -110,6 +118,7 @@ namespace Hfdp
            public: virtual std::string
                    execute() const
                    {
+                     HUM_TRACE(ACE_TEXT("Fowl_factory::Squeak_speech::execute"));
                      return "Squeak!";						// TODO: make this a resource
                    }
            };
@@ -121,6 +130,7 @@ namespace Hfdp
            public: virtual std::string
                    execute() const
                    {
+                     HUM_TRACE(ACE_TEXT("Fowl_factory::Negated_speech::execute"));
                      return "<< silence >>";					// TODO: make this a resource
                    }
            };
@@ -151,6 +161,7 @@ namespace Hfdp
           public: static std::string 
                   type_name()
                   {
+                    HUM_TRACE(ACE_TEXT("Fowl_factory::Mallard_duck::type_name"));
                     static std::string value("Fowl_factory::Mallard_duck");
                     return value;
                   }
@@ -172,6 +183,7 @@ namespace Hfdp
           public: static std::string 
                   type_name()
                   {
+                    HUM_TRACE(ACE_TEXT("Fowl_factory::Wild_turkey::type_name"));
                     static std::string value("Fowl_factory::Wild_turkey");
                     return value;
                   }
@@ -190,6 +202,7 @@ namespace Hfdp
           public: static std::string
                   type_name()
                   {
+                    HUM_TRACE(ACE_TEXT("Fowl_factory::Decoy_duck::type_name"));
                     static std::string value("Fowl_factory::Decoy_duck");
                     return value;
                   }
@@ -208,6 +221,7 @@ namespace Hfdp
           public: static std::string
                   type_name()
                   {
+                    HUM_TRACE(ACE_TEXT("Fowl_factory::Rubber_duck::type_name"));
                     static std::string value("Fowl_factory::Rubber_duck");
                     return value;
                   }
@@ -230,30 +244,33 @@ namespace Hfdp
   public: template <typename T> std::auto_ptr<Fowl>
           make() const
           {
+            HUM_TRACE(ACE_TEXT("Fowl_factory::make"));
             return make(identity<T>());
           }
 
   private: template <typename T> std::auto_ptr<Fowl>
-          make(identity<T>) const
-          {
-            return std::auto_ptr<Fowl>(0);
-          }
+           make(identity<T>) const
+           {
+             HUM_TRACE(ACE_TEXT("Fowl_factory::make(identity<T>)"));
+             return std::auto_ptr<Fowl>(0);
+           }
 
-          /**
-           *	makes an instance of a 'Decoy_duck'.
-           *
-           *	Idiom;	Ownership, sources and sinks, here, ownership transfer is 
-           *			implied through the use of auto_ptr return value;
-           *			it acts like a source, whereby the caller takes ownership
-           *			of the object referenced in the auto_ptr container and is 
-           *			responsible for its disposal.
-           *
-           *	C++;	Template Specialization, empty class type identifier affords
-           *			method overriding based on type
-           */
+           /**
+            *	makes an instance of a 'Decoy_duck'.
+            *
+            *	Idiom;	Ownership, sources and sinks, here, ownership transfer is 
+            *			implied through the use of auto_ptr return value;
+            *			it acts like a source, whereby the caller takes ownership
+            *			of the object referenced in the auto_ptr container and is 
+            *			responsible for its disposal.
+            *
+            *	C++;	Template Specialization, empty class type identifier affords
+            *			method overriding based on type
+            */
   private:std::auto_ptr<Fowl>
           make(identity<Decoy_duck>) const
           {
+            HUM_TRACE(ACE_TEXT("Fowl_factory::make(identity<Decoy_duck>)"));
             Fowl* fowl = new Fowl (	Decoy_duck::type_name(),
                                         std::auto_ptr<Flight>(new Negated_flight),	// is flightless,
                                         std::auto_ptr<Speech>(new Negated_speech),	// speechless, and
@@ -276,6 +293,7 @@ namespace Hfdp
   private:std::auto_ptr<Fowl>
           make(identity<Rubber_duck>) const
           {
+            HUM_TRACE(ACE_TEXT("Fowl_factory::make(identity<Rubber_duck>)"));
             Fowl* fowl = new Fowl (Rubber_duck::type_name(),
                                    std::auto_ptr<Flight>(new Negated_flight),	// is flightless,
                                    std::auto_ptr<Speech>(new Squeak_speech),	// squeaks, and
@@ -298,6 +316,7 @@ namespace Hfdp
   private:std::auto_ptr<Fowl>
           make(identity<Mallard_duck>) const
           {
+            HUM_TRACE(ACE_TEXT("Fowl_factory::make(identity<Mallard_duck>)"));
             Fowl* fowl = new Fowl (Mallard_duck::type_name(),
                                    std::auto_ptr<Flight>(new Winged_flight),	// flies on wings,
                                    std::auto_ptr<Speech>(new Quack_speech),	// quacks, and
@@ -320,6 +339,7 @@ namespace Hfdp
   private:std::auto_ptr<Fowl>
           make(identity<Wild_turkey>) const
           {
+            HUM_TRACE(ACE_TEXT("Fowl_factory::make(identity<Wild_turkey>)"));
             Fowl* fowl = new Fowl (Wild_turkey::type_name(),
                                    std::auto_ptr<Flight>(new Winged_flight),	// flies on wings,
                                    std::auto_ptr<Speech>(new Gobble_speech),	// gobbles, and

@@ -1,6 +1,8 @@
 #ifndef	_hfdp_cpp_objectville_flight_hpp_
 #define _hfdp_cpp_objectville_flight_hpp_
 
+#include "Hum_Log_Manager.h"
+#include "Hum_Trace.h"
 #include "../Objectville/Hfdp.h"
 
 namespace Hfdp 
@@ -28,6 +30,7 @@ namespace Hfdp
      */	
     virtual ~Flight()
     {
+      HUM_TRACE(ACE_TEXT("Flight::~Flight"));
     }
     /**
      *	Defines a contract that exposes behavioral execution

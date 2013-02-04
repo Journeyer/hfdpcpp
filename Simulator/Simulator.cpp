@@ -1,5 +1,8 @@
 // see	http://hfdpcpp.wordpress.com/white-gold/ for comments & discussions
 
+#include "Hum_Log_Manager.h"
+#include "Hum_Trace.h"
+
 #if defined(WIN32)
 #include <SDKDDKVer.h>
 #endif
@@ -41,6 +44,8 @@ using namespace Hfdp;
  */
 void animate(ostream& stream, const auto_ptr<Fowl>& fowl)
 {	
+  HUM_TRACE(ACE_TEXT("animate"));
+
   stringstream string;
 
   string << fowl->get_weight();
@@ -70,6 +75,10 @@ int _tmain(int argc, _TCHAR* argv[])
 int main(int argc, char* argv[])
 #endif
 {
+
+  HUM_LOG_MANAGER->redirectToFile(ACE_TEXT("Simulator.log"));
+
+  HUM_TRACE(ACE_TEXT("main"));
 
 #if defined(_hfdp_cpp_objectville_)
 

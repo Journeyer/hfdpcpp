@@ -1,6 +1,8 @@
 #ifndef	_hfdp_cpp_objectville_singleton_hpp_
 #define _hfdp_cpp_objectville_singleton_hpp_
 
+#include "Hum_Log_Manager.h"
+#include "Hum_Trace.h"
 #include "../Objectville/Hfdp.h"
 
 namespace Hfdp {
@@ -17,35 +19,37 @@ namespace Hfdp {
        *	to C++ philosophy of not paying for what you don't use.
        */
     public: static T&
-	    instance()
-	    {
-	      static T instance;
-	      return instance;
-	    }
-	    /**
-	     *	default ctor, declared protected to disable direct instantiation
-	     */
+            instance()
+            {
+              static T instance;
+              return instance;
+            }
+            /**
+             *	default ctor, declared protected to disable direct instantiation
+             */
     protected: Singleton() 
-	       {
-	       }
-	       /**
-		*	dtor, although this is a polymorphic base class, a protected dtor 
-		*	prohibits explicit deletion thereby rendering 'virtual' keyword
-		*	unnecessary. Omitting this keyword implies that deletion of a class
-		*	via its base pointer is not supported
-		*/
+               {
+                 HUM_TRACE(ACE_TEXT("Singleton::Singleton"));
+               }
+               /**
+                *	dtor, although this is a polymorphic base class, a protected dtor 
+                *	prohibits explicit deletion thereby rendering 'virtual' keyword
+                *	unnecessary. Omitting this keyword implies that deletion of a class
+                *	via its base pointer is not supported
+                */
     protected: ~Singleton() 
-	       {
-	       }
-	       /**
-		*	copy ctor, declared to inhibit implicit compiler generation, undefined
-		*	to prohibit copying 
-		*/
+               {
+                 HUM_TRACE(ACE_TEXT("Singleton::~Singleton"));
+               }
+               /**
+                *	copy ctor, declared to inhibit implicit compiler generation, undefined
+                *	to prohibit copying 
+                */
     private: Singleton(const Singleton&);
-	     /**
-	      *	assignment operator, declared to inhibit implicit compiler generation,
-	      *	undefined to prohibit assignment
-	      */
+             /**
+              *	assignment operator, declared to inhibit implicit compiler generation,
+              *	undefined to prohibit assignment
+              */
     private: Singleton& operator=(const Singleton&);
     };
 }

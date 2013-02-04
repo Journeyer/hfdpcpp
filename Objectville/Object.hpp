@@ -1,6 +1,8 @@
 #ifndef	_hfdp_cpp_objectville_object_hpp_
 #define _hfdp_cpp_objectville_object_hpp_
 
+#include "Hum_Log_Manager.h"
+#include "Hum_Trace.h"
 #include <memory>
 #include <string>
 #include <typeinfo>
@@ -37,6 +39,7 @@ namespace Hfdp
             */
   public: Object()
           {
+            HUM_TRACE(ACE_TEXT("Object::Object"));
             hash_code = reinterpret_cast<size_t>(this) * 2654435761U;
           }
           /**
@@ -46,6 +49,7 @@ namespace Hfdp
            */	
   public: virtual ~Object()
           {
+            HUM_TRACE(ACE_TEXT("Object::~Object"));
           }
           /**
            *	operator override; returns 'true' if 'this' instance is considered
@@ -110,6 +114,7 @@ namespace Hfdp
   public: std::string	
           to_string() const
           {
+            HUM_TRACE(ACE_TEXT("Object::to_string"));
             return to_string_impl();			// call private, virtual implementation
           }
           /**
@@ -122,6 +127,7 @@ namespace Hfdp
   private: virtual std::string
            to_string_impl() const
            {
+             HUM_TRACE(ACE_TEXT("Object::to_string_impl"));
              return std::string(typeid(this).name());
            }
            /**
@@ -138,6 +144,7 @@ namespace Hfdp
   public: size_t 
           get_hash_code() const
           {
+            HUM_TRACE(ACE_TEXT("Object::get_hash_code"));
             return get_hash_code_impl();	// call private, virtual implementation
           };
           /**
@@ -153,6 +160,7 @@ namespace Hfdp
   private: virtual size_t		
            get_hash_code_impl() const
            {
+             HUM_TRACE(ACE_TEXT("Object::get_hash_code_impl"));
              return hash_code;
            };
   };
