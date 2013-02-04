@@ -5,3 +5,9 @@ Please refer to the urls below:
 http://opensource.org/licenses/afl-3.0.php
 http://hfdp-cpp.sourceforge.net/
 
+Specially this branch contains debugging trace api, which uses ACE
+http://www.cs.wustl.edu/~schmidt/ACE.html
+But this version of hfdpcpp doesn't contain any code of ACE
+or debugging trace library.
+
+Whether to open debugging trace library using ACE is not certain yet.
